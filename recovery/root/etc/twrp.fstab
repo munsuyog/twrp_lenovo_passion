@@ -1,0 +1,11 @@
+/system       ext4          /dev/block/bootdevice/by-name/system
+/data         ext4          /dev/block/bootdevice/by-name/userdata	 flags=backup=1;wipeingui;encryptable=footer  
+/cache        ext4          /dev/block/bootdevice/by-name/cache
+/boot         emmc          /dev/block/bootdevice/by-name/boot		 flags=display="Kernel";backup=1
+/recovery     emmc          /dev/block/bootdevice/by-name/recovery
+/persist      ext4          /dev/block/bootdevice/by-name/persist	 flags=fsflags=nosuid,nodev,barrier=1;mounttodecrypt
+/firmware     vfat          /dev/block/bootdevice/by-name/modem		 flags=display="Firmware";backup=1;fsflags=ro;mounttodecrypt
+/misc         emmc          /dev/block/bootdevice/by-name/misc
+
+/external_sd  auto          /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="MicroSD Card";storage;wipeingui;removable
+/usb_otg      auto          /dev/block/sda1  /dev/block/sda              flags=display="USB-OTG";storage;wipeingui;removable
